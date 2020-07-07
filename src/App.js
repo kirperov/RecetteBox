@@ -11,7 +11,7 @@ class App extends Component {
   render () {
     return (
       <div className='box'>
-        <Header pseudo={this.state.pseudo}/>
+        <Header pseudo={this.state.pseudo}/> 
         <div className='cards'>
           <div className='card'>
             <h2>Une Carte</h2>
