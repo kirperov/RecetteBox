@@ -7,10 +7,18 @@ const Card = ({details}) => {
         const instructions = details.instructions
         .split('\n')
         .map(item => <li key={item}>{item}</li>)
+
+    const requireImage = path => {
+        try {
+            return require(`../img/${path}`)
+        } catch (err) {
+            return require(`../img/default.jpeg`)
+        }
+    }
     return (
         <div className="card">
             <div className="image">
-                <img src={require(`../img/${details.image}`)} alt={details.nom}></img>
+                <img src={requireImage(details.image)} alt={details.nom}></img>
             </div>
             <div className="recette">
                 <h2>{details.nom}</h2>
