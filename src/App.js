@@ -26,8 +26,15 @@ class App extends Component {
     base.removeBinding(this.ref)
   }
 
-loadExemple = () => this.setState({ recettes })
+  //Function to add recipe
+  addRecipe = recette => {
+    const recettes = { ...this.state.recettes }
+    recettes[`recette-${Date.now()}`] = recette
+    this.setState({recettes})
+  }
 
+  //Add Exemple recipes
+loadExemple = () => this.setState({ recettes })
   render () {
     const cards = Object.keys(this.state.recettes)
       .map(key => <Card key={key} details={this.state.recettes[key]}/>)
@@ -38,6 +45,7 @@ loadExemple = () => this.setState({ recettes })
           { cards }
         </div>
         <Admin 
+          addRecipe={this.addRecipe}
           loadExemple={this.loadExemple}
           ></Admin>
       </div>
