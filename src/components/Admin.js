@@ -3,7 +3,7 @@ import AddRecipe from './AddRecipe'
 import AdminForm from './AdminForm'
 class Admin extends Component {
     render() { 
-        const {recettes, addRecipe, updateRecipe, loadExemple } = this.props
+        const {recettes, addRecipe, updateRecipe, loadExemple, deleteRecipe } = this.props
         return (
             <div className="cards">
                 <AddRecipe addRecipe={ addRecipe}/>
@@ -13,6 +13,7 @@ class Admin extends Component {
                         key={key}
                         id={key}
                         updateRecipe={updateRecipe}
+                        deleteRecipe={deleteRecipe}
                         recettes={recettes}
                     />)
                 }

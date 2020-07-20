@@ -39,6 +39,13 @@ class App extends Component {
     this.setState({recettes})
   }
 
+  //Fuction delete recipe 
+  deleteRecipe = key => {
+    const recettes = { ...this.state.recettes }
+    recettes[key] = null
+    this.setState({recettes})
+  }
+
   //Add Exemple recipes
 loadExemple = () => this.setState({ recettes })
   render () {
@@ -55,6 +62,7 @@ loadExemple = () => this.setState({ recettes })
           addRecipe={this.addRecipe}
           updateRecipe={this.updateRecipe}
           loadExemple={this.loadExemple}
+          deleteRecipe={this.deleteRecipe}
           ></Admin>
       </div>
     )
