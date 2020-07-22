@@ -58,6 +58,7 @@ loadExemple = () => this.setState({ recettes })
           { cards }
         </div>
         <Admin
+          pseudo={this.state.pseudo}
           recettes={this.state.recettes}
           addRecipe={this.addRecipe}
           updateRecipe={this.updateRecipe}
